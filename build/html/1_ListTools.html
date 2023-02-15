@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Course material &mdash; PhD-BEE Tor Vergata - Metagenomic analysis of NGS data 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Quality filtering of reads" href="2_ReadsFiltering.html" />
+    <link rel="prev" title="Metagenomic analysis of NGS data" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> PhD-BEE Tor Vergata - Metagenomic analysis of NGS data
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Course material</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#list-of-tools">1.1. List of Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#datasets-to-download">1.2. Datasets to download</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2_ReadsFiltering.html">2. Quality filtering of reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Metagenomics_taxonomy.html">3. Metagenomic screening of shotgun data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_prepare_tables.html">4. Prepare abundance tables for downstream analyses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Metagenomic_analysis_R.html">5. Analysis of Metagenomic data in R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Do_it_yourself.html">6. Do it yourself</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PhD-BEE Tor Vergata - Metagenomic analysis of NGS data</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">1. </span>Course material</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/1_ListTools.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="course-material">
+<h1><span class="section-number">1. </span>Course material<a class="headerlink" href="#course-material" title="Permalink to this headline"></a></h1>
+<section id="list-of-tools">
+<h2><span class="section-number">1.1. </span>List of Tools<a class="headerlink" href="#list-of-tools" title="Permalink to this headline"></a></h2>
+<dl class="simple">
+<dt>Data quality control and preprocessing</dt><dd><ul class="simple">
+<li><p>fastqc: <a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">https://www.bioinformatics.babraham.ac.uk/projects/fastqc/</a></p></li>
+<li><p>AdapterRemoval: <a class="reference external" href="https://github.com/MikkelSchubert/adapterremoval">https://github.com/MikkelSchubert/adapterremoval</a></p></li>
+</ul>
+</dd>
+<dt>Taxonomic classification of shotgun sequencing data</dt><dd><ul class="simple">
+<li><p>kraken: <a class="reference external" href="https://ccb.jhu.edu/software/kraken/">https://ccb.jhu.edu/software/kraken/</a></p></li>
+<li><p>kraken2: <a class="reference external" href="https://ccb.jhu.edu/software/kraken2/index.shtml">https://ccb.jhu.edu/software/kraken2/index.shtml</a></p></li>
+<li><p>braken: <a class="reference external" href="https://ccb.jhu.edu/software/bracken/">https://ccb.jhu.edu/software/bracken/</a></p></li>
+<li><p>metaphlan3: <a class="reference external" href="https://github.com/biobakery/MetaPhlAn/wiki/MetaPhlAn-3.0">https://github.com/biobakery/MetaPhlAn/wiki/MetaPhlAn-3.0</a></p></li>
+</ul>
+</dd>
+<dt>Visualization of taxonomic classification</dt><dd><ul class="simple">
+<li><p>krona: <a class="reference external" href="https://github.com/marbl/Krona/wiki">https://github.com/marbl/Krona/wiki</a></p></li>
+<li><p>pavian: <a class="reference external" href="https://ccb.jhu.edu/software/pavian/">https://ccb.jhu.edu/software/pavian/</a></p></li>
+</ul>
+</dd>
+<dt>R packages for data analysis</dt><dd><ul class="simple">
+<li><p>phyloseq: <a class="reference external" href="https://joey711.github.io/phyloseq/">https://joey711.github.io/phyloseq/</a></p></li>
+<li><p>vegan: <a class="reference external" href="https://rdrr.io/cran/vegan/man/vegan-package.html">https://rdrr.io/cran/vegan/man/vegan-package.html</a></p></li>
+<li><p>ggplot2: <a class="reference external" href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a></p></li>
+<li><p>microbiome: <a class="reference external" href="https://microbiome.github.io/tutorials/">https://microbiome.github.io/tutorials/</a></p></li>
+<li><p>DESeq2: <a class="reference external" href="http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html">http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html</a></p></li>
+</ul>
+</dd>
+<dt>Other tools:</dt><dd><ul class="simple">
+<li><p>taxaranks: <a class="reference external" href="https://github.com/linzhi2013/taxonomy_ranks/blob/master/README.md">https://github.com/linzhi2013/taxonomy_ranks/blob/master/README.md</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="datasets-to-download">
+<h2><span class="section-number">1.2. </span>Datasets to download<a class="headerlink" href="#datasets-to-download" title="Permalink to this headline"></a></h2>
+<p>In the links below download the material needed for this course</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://drive.google.com/open?id=1p0nnL_N547Ekm9VGDkd3PMltObxwzXbB&amp;authuser=ottocla%40gmail.com&amp;usp=drive_fs">Fastq files 1</a> - paired-end sequencing dataset of dental calculus from chimpanzees.</p></li>
+<li><p><a class="reference external" href="https://drive.google.com/open?id=1p0nnL_N547Ekm9VGDkd3PMltObxwzXbB&amp;authuser=ottocla%40gmail.com&amp;usp=drive_fs">Fastq files 2</a> - paired-end sequencing dataset of dental calculus from ancient humans (for further practice).</p></li>
+<li><p><a class="reference external" href="https://drive.google.com/open?id=1q0l-HcWjExnG_TjTGNzDo_q8-5rvjuF4&amp;authuser=ottocla%40gmail.com&amp;usp=drive_fs">Kraken2 2Gb database</a> - built from complete genomes of bacteria, archaea, fungi and protozoa in the NCBI RefSeq.</p></li>
+<li><p><a class="reference external" href="https://drive.google.com/open?id=1pDRwfHhP1C4paEsxKQEtB8mSTMp0pVjT&amp;authuser=ottocla%40gmail.com&amp;usp=drive_fs">Scripts</a> used during the course.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Metagenomic analysis of NGS data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="2_ReadsFiltering.html" class="btn btn-neutral float-right" title="2. Quality filtering of reads" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Claudio Ottoni.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-XXXXXXX-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

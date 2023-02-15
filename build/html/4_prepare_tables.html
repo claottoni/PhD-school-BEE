@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. Prepare abundance tables for downstream analyses &mdash; PhD-BEE Tor Vergata - Metagenomic analysis of NGS data 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Analysis of Metagenomic data in R" href="5_Metagenomic_analysis_R.html" />
+    <link rel="prev" title="3. Metagenomic screening of shotgun data" href="3_Metagenomics_taxonomy.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> PhD-BEE Tor Vergata - Metagenomic analysis of NGS data
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_ListTools.html">1. Course material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_ReadsFiltering.html">2. Quality filtering of reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Metagenomics_taxonomy.html">3. Metagenomic screening of shotgun data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Prepare abundance tables for downstream analyses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#parse-the-kraken-bracken-outputs-to-abundance-tables">4.1. Parse the kraken/bracken outputs to abundance tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#normalization-of-the-abundance-table-for-genome-length">4.2. Normalization of the abundance table for genome length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#retrieve-full-taxonomic-ranks-of-the-abundance-table">4.3. Retrieve full taxonomic ranks of the abundance table</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="5_Metagenomic_analysis_R.html">5. Analysis of Metagenomic data in R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Do_it_yourself.html">6. Do it yourself</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PhD-BEE Tor Vergata - Metagenomic analysis of NGS data</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">4. </span>Prepare abundance tables for downstream analyses</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/4_prepare_tables.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="prepare-abundance-tables-for-downstream-analyses">
+<h1><span class="section-number">4. </span>Prepare abundance tables for downstream analyses<a class="headerlink" href="#prepare-abundance-tables-for-downstream-analyses" title="Permalink to this headline"></a></h1>
+<p>So, after classifying the reads of each sample with Kraken2 we estimate the abudances with Bracken.
+The output files with the taxa abundances were saved in the <code class="docutils literal notranslate"><span class="pre">sample.bracken</span></code> files.
+In the following steps we will use some packages in R to explore the microbial datasets and create charts from the abundance tables generated with Bracken.</p>
+<section id="parse-the-kraken-bracken-outputs-to-abundance-tables">
+<h2><span class="section-number">4.1. </span>Parse the kraken/bracken outputs to abundance tables<a class="headerlink" href="#parse-the-kraken-bracken-outputs-to-abundance-tables" title="Permalink to this headline"></a></h2>
+<p>First of all, we have to create an <strong>abundance table</strong> comprehensive of all the taxa abundances for every sample.
+To do that we will use a custom R script, <code class="docutils literal notranslate"><span class="pre">brackenToAbundanceTable_v2.R</span></code>, which merges the species aundances contained in the bracken output of each sample in one table. The script needs as argument the path to the folder containing the bracken results.
+Move to the folder with the bracken results and type the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brackenToAbundanceTable_v2</span><span class="o">.</span><span class="n">R</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>The script will generate the abundance table <code class="docutils literal notranslate"><span class="pre">taxa_abundance_bracken_names_IDs.txt</span></code>, which contains the species names and the NCBI IDs in each row, and the samples in the columns.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can generate abundance tables for various datasets (with bracken files contained in dedicated folders) and rename the final tables based on the folder (i.e. dataset) name. Try the following commands in the the folder containing all the datasets-subfolders:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for i in $(find -name &quot;*names_IDs.txt&quot; -type f | sort); do tag=$(basename $(dirname &quot;$i&quot;)); cp $i ${FOLDER}/${tag}_abundance_bracken_names_IDs.txt; done
+</pre></div>
+</div>
+</div>
+<p>We will compare the oral microbiome of the Gombe chimps reconstructed from their dental calculus with other microbiomes.
+To do that we will merge the species abundance table of the chimps with the abundance table <code class="docutils literal notranslate"><span class="pre">refDataset1_abundance_table_IDs.merged</span></code> containing species abundances of various microbiomes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Human <a class="reference external" href="https://www.nature.com/articles/ncomms7505">gut microbiome</a> from present-day agriculturalist communities in Peru and an urban-industrialized community from the US.</p></li>
+<li><p>Human <a class="reference external" href="https://genome.cshlp.org/content/22/5/850">skin microbiome</a> from children with atopic dermatitis.</p></li>
+<li><p><a class="reference external" href="https://www.frontiersin.org/articles/10.3389/fmicb.2016.00579/full">Soil microbiome</a> from Arctic tundra in Alaska and grassland in Oklahoma.</p></li>
+<li><p>Human <a class="reference external" href="https://www.hmpdacc.org/resources/data_browser.php">supragingival plaque</a> microbiome from the Human Microbiome Project Database.</p></li>
+</ul>
+</div></blockquote>
+<p>This table (<a class="reference external" href="https://drive.google.com/open?id=1om9Rfstg2mh0HReLYpTcWiWiGkUAbymT&amp;authuser=ottocla%40gmail.com&amp;usp=drive_fs">download here</a>) was generated by running the raw sequencing data of each dataset against the <code class="docutils literal notranslate"><span class="pre">customkraken2_2Gb_Feb2023_db</span></code> database that we are using with Kraken2. Do not compare datasets generated from different databases.
+To merge the chimp and reference abundance tables use the <code class="docutils literal notranslate"><span class="pre">abundanceTablesMerger_v2.R</span></code> script. The output is a file named <code class="docutils literal notranslate"><span class="pre">abundance_table_IDs.merged</span></code>, which we will use for downstream analyses.</p>
+<blockquote>
+<div></div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">abundanceTablesMerger_v2</span><span class="o">.</span><span class="n">R</span> <span class="n">taxa_abundance_bracken_names_IDs</span><span class="o">.</span><span class="n">txt</span> <span class="n">refDataset1_abundance_table_IDs</span><span class="o">.</span><span class="n">merged</span>
+</pre></div>
+</div>
+<p>If you have multiple datasets, you can merge them by listing each file one after the other:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">abundanceTablesMerger_v2</span><span class="o">.</span><span class="n">R</span> <span class="n">dataset1</span><span class="o">.</span><span class="n">txt</span> <span class="n">dataset2</span><span class="o">.</span><span class="n">txt</span> <span class="n">dataset3</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="normalization-of-the-abundance-table-for-genome-length">
+<h2><span class="section-number">4.2. </span>Normalization of the abundance table for genome length<a class="headerlink" href="#normalization-of-the-abundance-table-for-genome-length" title="Permalink to this headline"></a></h2>
+<p>Since the Kraken database was built from complete Bacterial, Archaeal and Viral genomes, we must make a normalization for the genome leghts of each species. This normalization is important when we want to analyse relative taxa abundances to characterise full microbiomes.
+To do that will use a Python <a class="reference external" href="https://github.com/claottoni/toolbox/tree/main/gL-nomalizer">script</a> that takes three arguments:</p>
+<blockquote>
+<div></div></blockquote>
+<ol class="arabic simple">
+<li><p>The abundance table with names</p></li>
+<li><p>The table of genome lengths (parsed from the NCBI genome <a class="reference external" href="https://www.ncbi.nlm.nih.gov/genome/browse/#!/prokaryotes/">browser</a>)</p></li>
+<li><p>The name of the output file</p></li>
+</ol>
+<blockquote>
+<div></div></blockquote>
+<p>The script searches the <strong>names</strong> of the species in the file with the list of genome lengths of species in the NCBI and divides the abundance of each species by the length of the assembly available in the NCBI.
+You can put the table of the genome lenghts inside the folder containing your species abundance table, or you can assign it a variable with the path.
+Run the normalization with <code class="docutils literal notranslate"><span class="pre">gL-normalizer-lite_v3.py</span></code> and type the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>TABLE=/path/to/folder/gL-prokaryotes-viruses-Jun2022.table
+python gL-normalizer-lite_v3.py abundance_table_IDs.merged $TABLE abundance_table_IDs.merged.norm
+</pre></div>
+</div>
+<p>The output table is named <code class="docutils literal notranslate"><span class="pre">abundance_table_IDs.merged.norm</span></code>. The table reports the <strong>Species</strong>, the <strong>NCBI IDs</strong>, the <strong>Assembly stage</strong> of the genome in NCBI, the <strong>Length in Megabases</strong>, the kind of <strong>Match</strong>, exact, species (when a peculiar strain is not found in the list of lenghts), and genus (when a species is not found).
+Some species may not be contained in the table of the genome lengths (for example if the taxonomy names have been updated or have ambiguities in the species name). The species not normalized are removed from the table, you can check them and their frequency (they are normally very rare) in the <code class="docutils literal notranslate"><span class="pre">gLnotNormalized.log</span></code> file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sort -t$&#39;\t&#39; -g -k3,3 gLnotNormalized.log
+</pre></div>
+</div>
+</section>
+<section id="retrieve-full-taxonomic-ranks-of-the-abundance-table">
+<h2><span class="section-number">4.3. </span>Retrieve full taxonomic ranks of the abundance table<a class="headerlink" href="#retrieve-full-taxonomic-ranks-of-the-abundance-table" title="Permalink to this headline"></a></h2>
+<p>In the next step, you will retrieve the full taxonomic ranks of the species in your abundance table. This is useful in the downstream steps to make analyses at taxonomic ranks higher than species (e.g. genus, phylum) in Phyloseq (see below).
+To retrieve the full taxonomic ranks you must have the program <a class="reference external" href="https://github.com/linzhi2013/taxonomy_ranks">Taxaranks</a> installed.</p>
+<blockquote>
+<div></div></blockquote>
+<p>Run the following script, which incorporates Taxaranks, to attach the full taxonomy to every species ID in your normalized table. Taxaranks takes the NCBI ID corresponding to each species in the table and searches the full taxonomy associated to that ID.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">getFullTaxaranks_v2</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">i</span> <span class="n">abundance_table_IDs</span><span class="o">.</span><span class="n">merged</span><span class="o">.</span><span class="n">norm</span>
+</pre></div>
+</div>
+<p>The script generates the following files:</p>
+<ol class="arabic simple">
+<li><p>a <code class="docutils literal notranslate"><span class="pre">file.taxonomy</span></code> - the full taxonomic ranks (up to Kingdom) of the species entries.</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">file.taxonomy.err</span></code> - the species for which no taxonomic ranks could be found.</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">file.taxonomy.final</span></code> - full taxonomy ranks are included in the original abundance table.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">file.taxonomy.err</span></code> should be empty in principle. If not, then the full taxonomic ranks could not be retrieved for the species listed. In that case, try to update the NCBI taxonomy database as reported in the Taxaranks website.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Depending on the composition of the Kraken DB that you used, you may want to remove unwanted taxa. To do that use <code class="docutils literal notranslate"><span class="pre">grep</span></code>, for example to remove Eukaryota and Viruses:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grep</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&quot;Viruses\|Eukaryota\|Fungi&quot;</span> <span class="n">abundance_table_IDs</span><span class="o">.</span><span class="n">merged</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">taxonomy</span><span class="o">.</span><span class="n">final</span> <span class="o">&gt;</span> <span class="n">abundance_table_IDs</span><span class="o">.</span><span class="n">merged</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">taxonomy</span><span class="o">.</span><span class="n">final</span><span class="o">.</span><span class="n">Archaea_Bacteria</span>
+</pre></div>
+</div>
+<p>If you want you could also generate a new table (without Eukaryota and Viruses) including only the species names, without the full taxonomy.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cut</span> <span class="o">-</span><span class="n">f</span> <span class="mi">20</span><span class="o">-</span> <span class="n">abundance_table_IDs</span><span class="o">.</span><span class="n">merged</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">final</span><span class="o">.</span><span class="n">Archaea_Bacteria</span> <span class="o">&gt;</span> <span class="n">abundance_table_IDs</span><span class="o">.</span><span class="n">merged</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">final</span><span class="o">.</span><span class="n">Archaea_Bacteria</span><span class="o">.</span><span class="n">species</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="3_Metagenomics_taxonomy.html" class="btn btn-neutral float-left" title="3. Metagenomic screening of shotgun data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="5_Metagenomic_analysis_R.html" class="btn btn-neutral float-right" title="5. Analysis of Metagenomic data in R" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Claudio Ottoni.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-XXXXXXX-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

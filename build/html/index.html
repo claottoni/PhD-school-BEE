@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metagenomic analysis of NGS data &mdash; PhD-BEE Tor Vergata - Metagenomic analysis of NGS data 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Course material" href="1_ListTools.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> PhD-BEE Tor Vergata - Metagenomic analysis of NGS data
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="1_ListTools.html">1. Course material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_ReadsFiltering.html">2. Quality filtering of reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Metagenomics_taxonomy.html">3. Metagenomic screening of shotgun data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_prepare_tables.html">4. Prepare abundance tables for downstream analyses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Metagenomic_analysis_R.html">5. Analysis of Metagenomic data in R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Do_it_yourself.html">6. Do it yourself</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">PhD-BEE Tor Vergata - Metagenomic analysis of NGS data</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>Metagenomic analysis of NGS data</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <a class="reference internal image-reference" href="_images/Tor-Vergata_logo_EN_cmyk.png"><img alt="_images/Tor-Vergata_logo_EN_cmyk.png" src="_images/Tor-Vergata_logo_EN_cmyk.png" style="width: 350px;" /></a>
+<section id="metagenomic-analysis-of-ngs-data">
+<h1>Metagenomic analysis of NGS data<a class="headerlink" href="#metagenomic-analysis-of-ngs-data" title="Permalink to this headline"></a></h1>
+<p>Tutorial of bioinformatics for the metagenomic analysis of Next-Generation Sequencing data.
+Course of the PhD school in Ecology and Evolutionary Biology at the University of Rome Tor Vergata.</p>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1_ListTools.html">1. Course material</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_ListTools.html#list-of-tools">1.1. List of Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_ListTools.html#datasets-to-download">1.2. Datasets to download</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2_ReadsFiltering.html">2. Quality filtering of reads</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_ReadsFiltering.html#reads-quality-control">2.1. Reads quality control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_ReadsFiltering.html#reads-quality-filtering">2.2. Reads quality filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3_Metagenomics_taxonomy.html">3. Metagenomic screening of shotgun data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_Metagenomics_taxonomy.html#kraken2">3.1. Kraken2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Metagenomics_taxonomy.html#bracken">3.2. Bracken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Metagenomics_taxonomy.html#mataphlan-3">3.3. Mataphlan 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Metagenomics_taxonomy.html#other-tools">3.4. Other tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="4_prepare_tables.html">4. Prepare abundance tables for downstream analyses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_prepare_tables.html#parse-the-kraken-bracken-outputs-to-abundance-tables">4.1. Parse the kraken/bracken outputs to abundance tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_prepare_tables.html#normalization-of-the-abundance-table-for-genome-length">4.2. Normalization of the abundance table for genome length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_prepare_tables.html#retrieve-full-taxonomic-ranks-of-the-abundance-table">4.3. Retrieve full taxonomic ranks of the abundance table</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="5_Metagenomic_analysis_R.html">5. Analysis of Metagenomic data in R</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_Metagenomic_analysis_R.html#install-r-packages">5.1. Install R packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Metagenomic_analysis_R.html#importing-abundance-tables-in-phyloseq">5.2. Importing abundance tables in Phyloseq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Metagenomic_analysis_R.html#barplot-of-taxa-abundances">5.3. Barplot of taxa abundances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Metagenomic_analysis_R.html#alpha-diversity">5.4. Alpha diversity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Metagenomic_analysis_R.html#note-on-compositional-data">5.5. Note on compositional data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Metagenomic_analysis_R.html#principal-coordinate-analysis-multidimensional-scaling">5.6. Principal Coordinate Analysis (Multidimensional Scaling)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Metagenomic_analysis_R.html#non-metric-multidimensional-scaling">5.7. Non-Metric Multidimensional Scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Metagenomic_analysis_R.html#differential-taxonomic-abundances-with-deseq2">5.8. Differential taxonomic abundances with DESeq2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Metagenomic_analysis_R.html#principal-component-analysis-pca">5.9. Principal Component Analysis (PCA)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="6_Do_it_yourself.html">6. Do it yourself</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="6_Do_it_yourself.html#hands-on-1-run-the-metagenomic-analysis-on-a-different-dataset">6.1. Hands-on 1: Run the metagenomic analysis on a different dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_Do_it_yourself.html#hands-on-2-run-kraken2-on-an-ancient-dental-calculus-dataset">6.2. Hands-on 2: Run Kraken2 on an ancient dental calculus dataset</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="1_ListTools.html" class="btn btn-neutral float-right" title="1. Course material" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Claudio Ottoni.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-XXXXXXX-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

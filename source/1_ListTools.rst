@@ -38,12 +38,13 @@ Datasets to download
 ********************
 In the links below download the material needed for this course
 
+  * `Linux cheatsheet`_ - summary of the most used commands in Linux.
   * `Fastq files 1`_ - paired-end sequencing dataset of dental calculus from chimpanzees. 
   * `Fastq files 2`_ - paired-end sequencing dataset of dental calculus from ancient humans (for further practice). 
   * `Kraken2 2Gb database`_ - built from complete genomes of bacteria, archaea, fungi and protozoa in the NCBI RefSeq.
   * `Scripts`_ used during the course.
 
-
+  .. _Linux cheatsheet: https://drive.google.com/open?id=1we1S3TXkm_-zCAhPtw0GDf8bw3ZMYO7k&authuser=ottocla%40gmail.com&usp=drive_fs
   .. _Fastq files 1: https://drive.google.com/open?id=1p0nnL_N547Ekm9VGDkd3PMltObxwzXbB&authuser=ottocla%40gmail.com&usp=drive_fs
   .. _Fastq files 2: https://drive.google.com/file/d/1ozZ-k5NAkpWrJybOqFcUnml1njIU4XTQ/view?usp=sharing
   .. _Kraken2 2Gb database:   https://drive.google.com/open?id=1q0l-HcWjExnG_TjTGNzDo_q8-5rvjuF4&authuser=ottocla%40gmail.com&usp=drive_fs

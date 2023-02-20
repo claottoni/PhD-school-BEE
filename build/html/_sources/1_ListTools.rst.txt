@@ -45,6 +45,6 @@ In the links below download the material needed for this course
 
 
   .. _Fastq files 1: https://drive.google.com/open?id=1p0nnL_N547Ekm9VGDkd3PMltObxwzXbB&authuser=ottocla%40gmail.com&usp=drive_fs
-  .. _Fastq files 2: https://drive.google.com/open?id=1p0nnL_N547Ekm9VGDkd3PMltObxwzXbB&authuser=ottocla%40gmail.com&usp=drive_fs
+  .. _Fastq files 2: https://drive.google.com/file/d/1ozZ-k5NAkpWrJybOqFcUnml1njIU4XTQ/view?usp=sharing
   .. _Kraken2 2Gb database:   https://drive.google.com/open?id=1q0l-HcWjExnG_TjTGNzDo_q8-5rvjuF4&authuser=ottocla%40gmail.com&usp=drive_fs
   .. _Scripts: https://drive.google.com/open?id=1pDRwfHhP1C4paEsxKQEtB8mSTMp0pVjT&authuser=ottocla%40gmail.com&usp=drive_fs 

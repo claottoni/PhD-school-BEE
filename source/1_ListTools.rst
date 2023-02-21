@@ -36,7 +36,7 @@ Other tools:
 ********************
 Datasets to download
 ********************
-In the links below download the material needed for this course
+In the links below download the material needed for this course:
 
   * `Linux cheatsheet`_ - summary of the most used commands in Linux.
   * `Fastq files 1`_ - paired-end sequencing dataset of dental calculus from chimpanzees. 
@@ -49,3 +49,9 @@ In the links below download the material needed for this course
   .. _Fastq files 2: https://drive.google.com/file/d/1ozZ-k5NAkpWrJybOqFcUnml1njIU4XTQ/view?usp=sharing
   .. _Kraken2 2Gb database:   https://drive.google.com/open?id=1q0l-HcWjExnG_TjTGNzDo_q8-5rvjuF4&authuser=ottocla%40gmail.com&usp=drive_fs
   .. _Scripts: https://drive.google.com/open?id=1pDRwfHhP1C4paEsxKQEtB8mSTMp0pVjT&authuser=ottocla%40gmail.com&usp=drive_fs 
+
+To practice some of the most used command lines in Linux we will go through a `tutorial by Kristian Rother`_ (Academis). 
+Download and follow the instructions step-by-step to find the hidden word. 
+
+  .. _tutorial by Kristian Rother: https://drive.google.com/drive/folders/144DJez6sYyQ4t4iGSTkCjvymzLAGn-c6?usp=sharing
+
